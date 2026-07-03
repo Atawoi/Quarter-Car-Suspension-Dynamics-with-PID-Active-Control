@@ -1,0 +1,22 @@
+
+=== System Properties ===
+Natural frequency wn:            7.07 rad/s (1.13 Hz)
+Passive damping ratio (zeta):    0.35
+Controlled damping ratio (zeta): 0.71
+
+=== Controller Gains ===
+Kp = 0   (no added stiffness — see pid_model.py docstring)
+Kd = 1500   (targets zeta ≈ 0.70)
+Ki = 0   (not needed — transient input, no steady-state error)
+
+=== Results Comparison ===
+Metric                           Passive    PID Active     Improvement
+----------------------------------------------------------------------
+Peak body displacement           12.6 mm       11.1 mm         11.6%
+Peak body acceleration          10.18 m/s²    10.59 m/s²         -4.0%
+RMS body displacement            3.29 mm       2.28 mm         30.8%
+Settling time (±2%)               2.24 s        1.39 s         37.6%
+Effective damping ratio            0.35         0.71        100.0%
+
+=== Verification ===
+Simulated zeta_a (0.71) vs target (0.70): PASS
